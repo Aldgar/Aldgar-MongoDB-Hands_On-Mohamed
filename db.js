@@ -1,10 +1,9 @@
-const mongodb = require("mongodb");
+const mongosse = require ("mongoose");
 
 const uri = process.env.MONGO_URI;
-const client = new mongodb.MongoClient(uri);
+
 function run() {
-   
-    client
+   mongosse
     .connect()
     .then(() => {
         console.log("Connected to MongoDB");
@@ -14,4 +13,4 @@ function run() {
     })
 }
 
-module.exports = { run, client };
+module.exports = { run };
